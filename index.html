@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Licenciatura em Música – UEL | Portal do Curso</title>
-  <meta name="description" content="Informações e documentos oficiais da Licenciatura em Música (UEL). Biblioteca de PDFs, matriz curricular, ementas e regulamentos." />
+  <meta name="description" content="Informações e documentos oficiais da Licenciatura em Música (UEL). Biblioteca de PDFs para download e consulta." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -12,222 +12,140 @@
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <span class="brand__dot"></span>
-        <span class="brand__text">Música • UEL</span>
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Licenciatura em Música – UEL</span>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Navegação principal">
         <a href="#curso">O curso</a>
-        <a href="#curriculo">Currículo</a>
         <a href="#documentos">Documentos</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">Menu</button>
     </div>
 
     <div class="mobileNav" id="mobileNav" hidden>
       <a href="#curso">O curso</a>
-      <a href="#curriculo">Currículo</a>
       <a href="#documentos">Documentos</a>
       <a href="#contato">Contato</a>
     </div>
   </header>
 
-  <main id="inicio">
+  <main id="inicio" class="container">
     <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <p class="pill">Portal do Curso • Licenciatura</p>
-          <h1>Licenciatura em Música – UEL</h1>
-          <p class="lead">
-            Informações essenciais do curso e uma biblioteca centralizada para baixar
-            documentos oficiais (PPC, matriz, ementas, regulamentos e afins).
-          </p>
-
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#documentos">Acessar documentos</a>
-            <a class="btn btn--ghost" href="https://graduacao.uel.br/musica/" target="_blank" rel="noopener">
-              Ver página institucional
-            </a>
-          </div>
-
-          <div class="hero__stats">
-            <div class="stat">
-              <div class="stat__k">Busca + filtros</div>
-              <div class="stat__v">para achar PDFs rápido</div>
-            </div>
-            <div class="stat">
-              <div class="stat__k">Atualização fácil</div>
-              <div class="stat__v">editando 1 arquivo (docs.json)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero__card" aria-label="Cartão de acesso rápido">
-          <h2>Acesso rápido</h2>
-          <div class="quick">
-            <a class="quick__item" href="#documentos">
-              <span class="quick__icon">📥</span>
-              <span>
-                <strong>Biblioteca de PDFs</strong>
-                <small>baixar documentos oficiais</small>
-              </span>
-            </a>
-
-            <a class="quick__item" href="#curriculo">
-              <span class="quick__icon">🧭</span>
-              <span>
-                <strong>Estrutura curricular</strong>
-                <small>matriz e percursos</small>
-              </span>
-            </a>
-
-            <a class="quick__item" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">
-              <span class="quick__icon">✉️</span>
-              <span>
-                <strong>Contatos oficiais</strong>
-                <small>colegiado / departamento</small>
-              </span>
-            </a>
-          </div>
-
-          <p class="muted">
-            * Este protótipo pode usar links oficiais para PDFs já publicados pela UEL/PROGRAD.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="curso" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>O curso</h2>
-          <p class="muted">
-            Texto resumido para o público geral. Você pode substituir por um texto oficial revisado pelo Colegiado/NDE.
-          </p>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card">
-            <h3>Visão geral</h3>
-            <p>
-              Formação para atuação em educação musical e práticas musicais, articulando fundamentos teóricos,
-              prática artística e dimensões pedagógicas.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Para quem</h3>
-            <p>
-              Interessados em docência, projetos socioculturais, pesquisa em educação musical e atuação em diferentes contextos
-              de ensino e aprendizagem.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Transparência</h3>
-            <p>
-              Documentos oficiais reunidos em um só lugar, com acesso rápido para estudantes, candidatos e avaliadores.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="curriculo" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Currículo e organização</h2>
-          <p class="muted">Atalhos para matrizes e ementas (PDF), além da página institucional de matriz.</p>
-        </div>
-
-        <div class="grid grid--2">
-          <article class="card">
-            <h3>Matriz curricular (página institucional)</h3>
-            <p>Referência oficial com links para matriz anterior e atual (a partir de 2023).</p>
-            <a class="btn btn--primary" href="https://graduacao.uel.br/musica/matriz-curricular/" target="_blank" rel="noopener">
-              Abrir página de matriz
-            </a>
-          </article>
-
-          <article class="card">
-            <h3>Ementas e organização curricular (catálogo PROGRAD)</h3>
-            <p>PDFs amplos (organização curricular e ementas) — úteis para consulta rápida e avaliações.</p>
-            <a class="btn btn--ghost" href="#documentos">Ver na biblioteca</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="documentos" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Biblioteca de documentos</h2>
-          <p class="muted">
-            Pesquise por palavra-chave (ex.: “PPC”, “ementas”, “estágio”, “matriz”) e/ou filtre por categoria.
-          </p>
-        </div>
-
-        <div class="toolbar">
-          <label class="search">
-            <span>Buscar</span>
-            <input id="q" type="search" placeholder="Digite para buscar…" autocomplete="off" />
-          </label>
-
-          <label class="select">
-            <span>Categoria</span>
-            <select id="cat">
-              <option value="all">Todas</option>
-            </select>
-          </label>
-
-          <button class="btn btn--ghost" id="clearBtn" type="button">Limpar</button>
-        </div>
-
-        <div id="docGrid" class="docGrid" aria-live="polite"></div>
-
-        <p class="footnote">
-          Observação: os downloads abrem em nova aba. Se algum link oficial mudar, basta atualizar o <code>docs.json</code>.
+      <div class="hero__head">
+        <h1>Portal de informações e documentos</h1>
+        <p class="lead">
+          Acesso rápido aos documentos do curso (PPC, matriz, ementas, regulamentos) e informações básicas para estudantes,
+          candidatos e avaliadores.
         </p>
       </div>
-    </section>
 
-    <section id="contato" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Contato</h2>
-          <p class="muted">
-            Para contatos oficiais (coordenação, e-mail institucional etc.), use a página institucional do curso.
-          </p>
-        </div>
+      <!-- Layout 2 colunas no desktop / 1 coluna no mobile -->
+      <div class="split">
+        <!-- Coluna esquerda -->
+        <aside class="left" aria-label="Informações do curso">
+          <div class="panel" id="curso">
+            <h2>Informações básicas</h2>
 
-        <div class="grid grid--2">
-          <article class="card">
-            <h3>Contatos oficiais do curso</h3>
-            <p>Link direto para a página institucional de contatos.</p>
-            <a class="btn btn--primary" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">
-              Abrir contatos
+            <dl class="facts">
+              <div class="fact">
+                <dt>Grau</dt>
+                <dd>Licenciatura</dd>
+              </div>
+              <div class="fact">
+                <dt>Área</dt>
+                <dd>Música</dd>
+              </div>
+              <div class="fact">
+                <dt>Instituição</dt>
+                <dd>Universidade Estadual de Londrina (UEL)</dd>
+              </div>
+              <div class="fact">
+                <dt>Links oficiais</dt>
+                <dd>
+                  <a class="link" href="https://graduacao.uel.br/musica/" target="_blank" rel="noopener">Página institucional do curso</a>
+                  <span class="sep">•</span>
+                  <a class="link" href="https://graduacao.uel.br/musica/matriz-curricular/" target="_blank" rel="noopener">Matriz curricular (página)</a>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="callouts">
+              <a class="btn btn--primary" href="#documentos">Ir para documentos</a>
+              <a class="btn btn--soft" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">Contatos oficiais</a>
+            </div>
+
+            <div class="note">
+              <strong>Observação:</strong> este portal centraliza links diretos para PDFs oficiais (PROGRAD/UEL) e é fácil de atualizar.
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Resumo do curso</h3>
+            <p class="muted">
+              (Edite este texto depois com a redação oficial do Colegiado/NDE.)
+              Formação voltada à educação musical, articulando prática artística, fundamentos teóricos e dimensões pedagógicas.
+            </p>
+          </div>
+
+          <div class="panel" id="contato">
+            <h3>Contato</h3>
+            <p class="muted">
+              Para informações oficiais (coordenação, e-mail institucional, telefone), utilize a página de contatos do curso.
+            </p>
+            <a class="btn btn--soft" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">
+              Abrir contatos oficiais
             </a>
-          </article>
+          </div>
+        </aside>
 
-          <article class="card">
-            <h3>Como atualizar este site</h3>
-            <ol class="steps">
-              <li>Edite <code>docs.json</code> (título, categoria, link).</li>
-              <li>Faça commit/publish (GitHub Pages ou Netlify).</li>
-              <li>Pronto: já aparece online.</li>
-            </ol>
-          </article>
-        </div>
+        <!-- Coluna direita -->
+        <section class="right" id="documentos" aria-label="Biblioteca de documentos">
+          <div class="panel panel--sticky">
+            <div class="docsHead">
+              <div>
+                <h2>Documentos para download</h2>
+                <p class="muted">Busque por palavra-chave e filtre por categoria.</p>
+              </div>
+              <div class="kpi" aria-label="Contagem de resultados">
+                <span class="kpi__label">Resultados</span>
+                <span class="kpi__value" id="count">0</span>
+              </div>
+            </div>
+
+            <div class="toolbar">
+              <label class="search">
+                <span>Buscar</span>
+                <input id="q" type="search" placeholder="Ex.: PPC, ementas, estágio…" autocomplete="off" />
+              </label>
+
+              <label class="select">
+                <span>Categoria</span>
+                <select id="cat">
+                  <option value="all">Todas</option>
+                </select>
+              </label>
+
+              <button class="btn btn--ghost" id="clearBtn" type="button">Limpar</button>
+            </div>
+
+            <div id="docList" class="docList" aria-live="polite"></div>
+
+            <p class="footnote">
+              Se algum link mudar, basta atualizar o arquivo <code>docs.json</code> no GitHub.
+            </p>
+          </div>
+        </section>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>Protótipo (site estático) • Licenciatura em Música – UEL</span>
-      <span class="muted">Atualize os links em docs.json</span>
+      <span class="muted">Licenciatura em Música – UEL • Portal de documentos</span>
+      <span class="muted">Publicado via GitHub Pages</span>
     </div>
   </footer>
 
