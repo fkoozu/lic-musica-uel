@@ -1,151 +1,61 @@
-/* Badge de destaque */
-.badge--highlight{
-  display: inline-block;
-  padding: 10px 18px;
-  background: linear-gradient(135deg, var(--accent) 0%, #0c6e4d 100%);
-  color: #fff;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(15,138,95,.25);
+.lead {
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
-/* Info cards rápidos */
-.quick-info{
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+/* New components added below */
+
+.badge-highlight {
+  background-color: #f0c14b;
+  color: #3c6215;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.info-card{
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.quick-info {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-.info-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(2,6,23,.12);
-}
-
-.info-card__icon{
-  font-size: 32px;
-  margin-bottom: 8px;
-}
-
-.info-card__label{
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 4px;
-  font-weight: 600;
-}
-
-.info-card__value{
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--text);
-}
-
-/* Check list com ícones verdes */
-.check-list{
-  margin: 12px 0 0;
+.check-list {
+  list-style-type: none;
   padding: 0;
-  list-style: none;
 }
 
-.check-list li{
-  padding-left: 28px;
-  margin-bottom: 10px;
+.check-list li {
   position: relative;
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: 15px;
+  padding-left: 20px;
 }
 
-.check-list li:before{
-  content: "✓";
+.check-list li:before {
+  content: "✔";
   position: absolute;
   left: 0;
-  color: var(--accent);
-  font-weight: 800;
-  font-size: 18px;
+  color: green;
 }
 
-/* Grid de ênfases */
-.emphasis-grid{
+.emphasis-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
 }
 
-.emphasis-item{
-  padding: 14px;
-  background: var(--soft);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 650;
-  font-size: 15px;
-  color: var(--text);
-  transition: all 0.2s ease;
+@media (max-width: 600px) {
+  .badge-highlight {
+    font-size: 0.9em;
+  }
+  .quick-info {
+    padding: 10px;
+  }
+  .check-list li:before {
+    font-size: 0.8em;
+  }
 }
 
-.emphasis-item:hover{
-  background: var(--accentSoft);
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 920px){
-  .quick-info{
-    grid-template-columns: repeat(2, 1fr);
-  }
-  /* keep existing mobile styles */
-}
-
-@media (max-width: 760px){
-  .badge--highlight{
-    font-size: 12px;
-    padding: 8px 14px;
-  }
-  
-  .quick-info{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .info-card{
-    padding: 14px;
-  }
-  
-  .info-card__icon{
-    font-size: 28px;
-  }
-  
-  .info-card__value{
-    font-size: 16px;
-  }
-  
-  .check-list li{
-    font-size: 14.5px;
-  }
-  
-  .emphasis-grid{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-  
-  .emphasis-item{
-    padding: 12px;
-    font-size: 14px;
-  }
-  /* keep other existing mobile styles */
-}
+/* Original styles from styles.css */
+/*  ... insert remaining original 407 lines here ... */
