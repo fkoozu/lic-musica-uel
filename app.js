@@ -37,13 +37,10 @@ function filterDocs(docs) {
 
   return docs.filter((d) => {
     const inCat = (cat === "all") ? true : d.category === cat;
-
     if (!qn) return inCat;
 
     const hay = normalize([d.title, d.desc, d.category, d.source].join(" "));
-    const inQ = hay.includes(qn);
-
-    return inCat && inQ;
+    return inCat && hay.includes(qn);
   });
 }
 
@@ -89,8 +86,6 @@ function docCard(d) {
   download.target = "_blank";
   download.rel = "noopener";
   download.textContent = "Download";
-  // Observação: o atributo download pode ser ignorado em links de outro domínio.
-  // Mesmo assim, abrir em nova aba costuma permitir baixar.
   download.setAttribute("download", "");
 
   actions.appendChild(open);
@@ -105,23 +100,28 @@ function docCard(d) {
 }
 
 function render() {
-  const grid = el("docGrid");
-  grid.innerHTML = "";
+  const list = el("docList");
+  list.innerHTML = "";
 
   const filtered = filterDocs(state.docs);
+  el("count").textContent = String(filtered.length);
 
   if (filtered.length === 0) {
     const empty = document.createElement("div");
-    empty.className = "card";
+    empty.className = "doc";
     empty.innerHTML = `
-      <h3>Nenhum documento encontrado</h3>
-      <p class="muted">Tente outra busca ou selecione “Todas” as categorias.</p>
+      <div class="doc__top">
+        <span class="badge">Sem resultados</span>
+        <span class="badge">0</span>
+      </div>
+      <h3 class="doc__title">Nenhum documento encontrado</h3>
+      <p class="doc__desc">Tente outra busca ou selecione “Todas” as categorias.</p>
     `;
-    grid.appendChild(empty);
+    list.appendChild(empty);
     return;
   }
 
-  filtered.forEach((d) => grid.appendChild(docCard(d)));
+  filtered.forEach((d) => list.appendChild(docCard(d)));
 }
 
 async function loadDocs() {
@@ -156,6 +156,7 @@ function setupUI() {
   // Mobile menu
   const menuBtn = el("menuBtn");
   const mobileNav = el("mobileNav");
+
   menuBtn.addEventListener("click", () => {
     const isOpen = !mobileNav.hasAttribute("hidden");
     if (isOpen) {
@@ -178,11 +179,16 @@ function setupUI() {
 setupUI();
 loadDocs().catch((err) => {
   console.error(err);
-  const grid = el("docGrid");
-  grid.innerHTML = `
-    <div class="card">
-      <h3>Erro ao carregar documentos</h3>
-      <p class="muted">Verifique se o arquivo <code>docs.json</code> está na mesma pasta e publicado corretamente.</p>
+  const list = el("docList");
+  list.innerHTML = `
+    <div class="doc">
+      <div class="doc__top">
+        <span class="badge">Erro</span>
+        <span class="badge">docs.json</span>
+      </div>
+      <h3 class="doc__title">Erro ao carregar documentos</h3>
+      <p class="doc__desc">Verifique se <code>docs.json</code> está publicado na raiz do repositório.</p>
     </div>
   `;
+  el("count").textContent = "0";
 });
