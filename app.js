@@ -78,14 +78,14 @@ function docCard(d) {
   open.href = d.url;
   open.target = "_blank";
   open.rel = "noopener";
-  open.textContent = "Abrir PDF";
+  open.textContent = "Abrir";
 
   const download = document.createElement("a");
   download.className = "btn btn--ghost";
   download.href = d.url;
   download.target = "_blank";
   download.rel = "noopener";
-  download.textContent = "Abrir em nova aba";
+  download.textContent = "Baixar";
 
   actions.appendChild(open);
   actions.appendChild(download);
@@ -100,82 +100,64 @@ function docCard(d) {
 
 function render() {
   const list = el("docList");
-  list.innerHTML = "";
+  const count = el("count");
 
   const filtered = filterDocs(state.docs);
-  el("count").textContent = String(filtered.length);
+  count.textContent = String(filtered.length);
 
-  if (filtered.length === 0) {
-    const empty = document.createElement("div");
-    empty.className = "doc";
-    empty.innerHTML = `
-      <div class="doc__top">
-        <span class="badge">Sem resultados</span>
-        <span class="badge">0</span>
-      </div>
-      <h3 class="doc__title">Nenhum documento encontrado</h3>
-      <p class="doc__desc">Tente outra busca ou selecione “Todas” as categorias.</p>
-    `;
-    list.appendChild(empty);
-    return;
-  }
-
+  list.innerHTML = "";
   filtered.forEach((d) => list.appendChild(docCard(d)));
 }
 
 async function loadDocs() {
-  const list = el("docList");
-  list.innerHTML = '<div class="doc"><h3 class="doc__title">Carregando documentos…</h3></div>';
-  
-  const res = await fetch("./docs.json", { cache: "no-store" });
-  if (!res.ok) throw new Error("Falha ao carregar docs.json");
+  const res = await fetch("docs.json", { cache: "no-store" });
   const docs = await res.json();
 
-  state.docs = Array.isArray(docs) ? docs : [];
-  renderCategoryOptions(buildCategories(state.docs));
+  state.docs = docs;
+  renderCategoryOptions(buildCategories(docs));
   render();
 }
 
 function setupUI() {
-  el("q").addEventListener("input", (e) => {
-    state.q = e.target.value || "";
+  const q = el("q");
+  const cat = el("cat");
+  const clearBtn = el("clearBtn");
+
+  q.addEventListener("input", (e) => {
+    state.q = e.target.value;
     render();
   });
 
-  el("cat").addEventListener("change", (e) => {
-    state.cat = e.target.value || "all";
+  cat.addEventListener("change", (e) => {
+    state.cat = e.target.value;
     render();
   });
 
-  el("clearBtn").addEventListener("click", () => {
+  clearBtn.addEventListener("click", () => {
     state.q = "";
     state.cat = "all";
-    el("q").value = "";
-    el("cat").value = "all";
+    q.value = "";
+    cat.value = "all";
     render();
   });
 
-  // Mobile menu
-  const menuBtn = el("menuBtn");
-  const mobileNav = el("mobileNav");
+  // Bottom nav: "Mais"
+  const moreBtn = el("moreBtn");
+  const moreSheet = el("moreSheet");
+  const closeMore = el("closeMore");
 
-  menuBtn.addEventListener("click", () => {
-    const isOpen = !mobileNav.hasAttribute("hidden");
-    if (isOpen) {
-      mobileNav.setAttribute("hidden", "");
-      menuBtn.setAttribute("aria-expanded", "false");
-    } else {
-      mobileNav.removeAttribute("hidden");
-      menuBtn.setAttribute("aria-expanded", "true");
-    }
-  });
+  const openSheet = () => { if (moreSheet) moreSheet.hidden = false; };
+  const closeSheet = () => { if (moreSheet) moreSheet.hidden = true; };
 
-  mobileNav.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      mobileNav.setAttribute("hidden", "");
-      menuBtn.setAttribute("aria-expanded", "false");
+  if (moreBtn) moreBtn.addEventListener("click", openSheet);
+  if (closeMore) closeMore.addEventListener("click", closeSheet);
+
+  if (moreSheet) {
+    moreSheet.addEventListener("click", (e) => {
+      if (e.target === moreSheet) closeSheet();
     });
-  });
+    moreSheet.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeSheet));
+  }
 }
 
 setupUI();
