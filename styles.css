@@ -820,7 +820,7 @@ doc__actions a{
     text-align: center;
     gap: 8px;
   }
-  
+
   /* Calendar responsive styles */
   .calendar-controls{
     flex-direction: column;

@@ -1,5 +1,5 @@
 let calendarEvents = [];
-let currentMonth = 1; // February (0-indexed)
+let currentMonth = 1; // February (0-indexed: 0=Jan, 1=Feb, etc)
 let currentYear = 2026;
 
 // Load events from JSON file
