@@ -219,13 +219,17 @@ loadDocs().catch((err) => {
 
 // Scroll Spy - Track active section
 function setupScrollSpy() {
-  const HEADER_HEIGHT = 80; // Should match --headerHeight in CSS
+  // Get header height from CSS custom property
+  const headerHeight = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--headerHeight')
+  ) || 80;
+  
   const sections = document.querySelectorAll("#inicio, #curso, #documentos, #contato");
   const navLinks = document.querySelectorAll(".desktopNav a, .mobileNav a");
 
   const observerOptions = {
     root: null,
-    rootMargin: `-${HEADER_HEIGHT}px 0px -60% 0px`,
+    rootMargin: `-${headerHeight}px 0px -60% 0px`,
     threshold: 0
   };
 
@@ -254,10 +258,11 @@ function setupScrollSpy() {
 
 // Back to top button
 function setupBackToTop() {
+  const SCROLL_THRESHOLD = 300; // Pixels scrolled before button appears
   const backToTop = el("backToTop");
   
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > SCROLL_THRESHOLD) {
       backToTop.classList.add("backToTop--visible");
     } else {
       backToTop.classList.remove("backToTop--visible");
