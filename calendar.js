@@ -1,5 +1,5 @@
 let calendarEvents = [];
-let currentMonth = 1; // February (0-indexed: 0=Jan, 1=Feb, etc)
+let currentMonth = 1; // Initialize to February (months are 0-indexed: 0=Jan, 1=Feb, 2=Mar, etc)
 let currentYear = 2026;
 
 // Load events from JSON file
@@ -70,6 +70,7 @@ function formatDate(dateStr) {
 
 // Format date with full weekday and month name
 function formatFullDate(dateStr) {
+  // Append T00:00:00 to force local timezone interpretation and avoid date shift
   const date = new Date(dateStr + 'T00:00:00');
   const weekdays = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
   const months = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
