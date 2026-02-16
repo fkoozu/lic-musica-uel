@@ -85,8 +85,7 @@ function docCard(d) {
   download.href = d.url;
   download.target = "_blank";
   download.rel = "noopener";
-  download.textContent = "Download";
-  download.setAttribute("download", "");
+  download.textContent = "Abrir em nova aba";
 
   actions.appendChild(open);
   actions.appendChild(download);
@@ -125,6 +124,9 @@ function render() {
 }
 
 async function loadDocs() {
+  const list = el("docList");
+  list.innerHTML = '<div class="doc"><h3 class="doc__title">Carregando documentos…</h3></div>';
+  
   const res = await fetch("./docs.json", { cache: "no-store" });
   if (!res.ok) throw new Error("Falha ao carregar docs.json");
   const docs = await res.json();
