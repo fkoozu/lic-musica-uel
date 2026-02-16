@@ -75,6 +75,25 @@ a:hover{ text-decoration: underline; }
 }
 .mobileNav a:hover{ color: var(--text); text-decoration: none; }
 
+.desktopNav{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.desktopNav a{
+  color: var(--muted);
+  font-size: 14.5px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.desktopNav a:hover{
+  color: var(--text);
+  background: var(--soft);
+  text-decoration: none;
+}
+
 .hero{ padding: 28px 0 34px; }
 .hero__head{ margin: 18px 0 18px; }
 
@@ -324,7 +343,7 @@ input[type="search"]:focus, select:focus{
   gap: 12px;
 }
 
-doc{
+.doc{
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 14px;
@@ -359,13 +378,13 @@ doc{
   font-size: 15px;
 }
 
-doc__actions{
+.doc__actions{
   margin-top: 12px;
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-doc__actions a{
+.doc__actions a{
   min-width: 140px;
   text-align:center;
 }
@@ -414,6 +433,7 @@ doc__actions a{
 }
 @media (max-width: 760px){
   .menuBtn{ display:inline-flex; }
+  .desktopNav{ display: none; }
 
   .container{ width: calc(100% - 32px); }
   
