@@ -324,7 +324,7 @@ input[type="search"]:focus, select:focus{
   gap: 12px;
 }
 
-doc{
+.doc{
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 14px;
@@ -359,13 +359,13 @@ doc{
   font-size: 15px;
 }
 
-doc__actions{
+.doc__actions{
   margin-top: 12px;
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-doc__actions a{
+.doc__actions a{
   min-width: 140px;
   text-align:center;
 }
