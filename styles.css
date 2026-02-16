@@ -9,6 +9,8 @@
   --radius: 16px;
   --accent: #0f8a5f;
   --accentSoft: rgba(15,138,95,.12);
+  --accentDark: #0c6e4d;
+  --headerHeight: 80px;
 }
 
 *{ box-sizing: border-box; }
@@ -134,7 +136,7 @@ a:hover{ text-decoration: underline; }
 
 /* Scroll margin for sticky header compensation */
 #curso, #documentos, #contato, #inicio {
-  scroll-margin-top: 80px;
+  scroll-margin-top: var(--headerHeight);
 }
 
 /* Overlay for mobile menu */
@@ -178,7 +180,7 @@ a:hover{ text-decoration: underline; }
   pointer-events: auto;
 }
 .backToTop:hover{
-  background: #0c6e4d;
+  background: var(--accentDark);
   box-shadow: 0 6px 16px rgba(15,138,95,.4);
 }
 .backToTop:focus-visible{
@@ -359,7 +361,7 @@ dd{ margin: 0; color: var(--muted); line-height: 1.5; font-size: 15px; }
   background: var(--accent);
   color: #fff;
 }
-.btn--primary:hover{ background: #0c6e4d; }
+.btn--primary:hover{ background: var(--accentDark); }
 
 .btn--soft{
   background: var(--accentSoft);

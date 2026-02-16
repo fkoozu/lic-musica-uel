@@ -219,12 +219,13 @@ loadDocs().catch((err) => {
 
 // Scroll Spy - Track active section
 function setupScrollSpy() {
+  const HEADER_HEIGHT = 80; // Should match --headerHeight in CSS
   const sections = document.querySelectorAll("#inicio, #curso, #documentos, #contato");
   const navLinks = document.querySelectorAll(".desktopNav a, .mobileNav a");
 
   const observerOptions = {
     root: null,
-    rootMargin: "-80px 0px -60% 0px",
+    rootMargin: `-${HEADER_HEIGHT}px 0px -60% 0px`,
     threshold: 0
   };
 
