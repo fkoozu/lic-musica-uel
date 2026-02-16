@@ -23,6 +23,7 @@
       <a href="#curso">O Curso</a>
       <a href="#documentos">Documentos</a>
       <a href="#calendario">Calendário</a>
+      <a href="#horarios">Horários</a>
       <a href="https://graduacao.uel.br/musica/projetos/" target="_blank" rel="noopener">Projetos (Pes/En/Ex)</a>
       <a href="https://sites.uel.br/prograd/estudante/estagios-e-intercambios/" target="_blank" rel="noopener">Estágio</a>
       <a href="#documentos">TCC</a>
@@ -223,6 +224,7 @@
 
         <div class="calendar-controls">
           <button class="btn btn--ghost calendar-nav-btn" onclick="prevMonth()" aria-label="Mês anterior">◀ Anterior</button>
+          <button class="btn btn--ghost calendar-nav-btn" onclick="goToday()" aria-label="Ir para hoje">📍 Hoje</button>
           <span class="calendar-month-title" id="calendar-header"></span>
           <button class="btn btn--ghost calendar-nav-btn" onclick="nextMonth()" aria-label="Próximo mês">Próximo ▶</button>
         </div>
@@ -237,6 +239,24 @@
           <span class="legend-item"><span class="legend-dot cal-exame"></span> Exame</span>
           <span class="legend-item"><span class="legend-dot cal-evento"></span> Evento</span>
         </div>
+      </div>
+    </section>
+
+    <section class="schedule-section" id="horarios">
+      <div class="panel">
+        <h2>🎵 Horário de Aulas 2026</h2>
+        <p class="muted">Grade horária do curso de Licenciatura em Música — disciplinas anuais.</p>
+        
+        <div class="schedule-filter" id="scheduleFilter">
+          <button class="schedule-year-btn schedule-year-btn--active" data-year="0" onclick="filterSchedule(0)">Todos</button>
+          <button class="schedule-year-btn" data-year="1" onclick="filterSchedule(1)">1º Ano</button>
+          <button class="schedule-year-btn" data-year="2" onclick="filterSchedule(2)">2º Ano</button>
+          <button class="schedule-year-btn" data-year="3" onclick="filterSchedule(3)">3º Ano</button>
+          <button class="schedule-year-btn" data-year="4" onclick="filterSchedule(4)">4º Ano</button>
+          <button class="schedule-year-btn" data-year="5" onclick="filterSchedule(5)">5º Ano</button>
+        </div>
+        
+        <div id="scheduleGrid" class="schedule-grid"></div>
       </div>
     </section>
 

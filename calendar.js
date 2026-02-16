@@ -1,6 +1,20 @@
 let calendarEvents = [];
+let schedule = [];
+let selectedYear = 0; // 0 = all years, 1-5 = specific year
 let currentMonth = 1; // Initialize to February (months are 0-indexed: 0=Jan, 1=Feb, 2=Mar, etc)
 let currentYear = 2026;
+
+// Load schedule from JSON file
+fetch('schedule-2026-ANUAL.json')
+  .then(res => res.json())
+  .then(data => { 
+    schedule = data;
+    // Render schedule grid if it exists
+    if (document.getElementById('scheduleGrid')) {
+      renderScheduleGrid();
+    }
+  })
+  .catch(err => console.error('Erro ao carregar horários:', err));
 
 // Load events from JSON file
 async function loadCalendarEvents() {
@@ -125,6 +139,7 @@ function renderCalendar(month, year) {
   for (let day = 1; day <= daysInMonth; day++) {
     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     const dayEvents = getEventsForDate(dateStr);
+    const weekday = new Date(dateStr + 'T00:00:00').getDay();
     
     const cell = document.createElement('div');
     cell.className = 'calendar-cell';
@@ -138,10 +153,6 @@ function renderCalendar(month, year) {
     if (dayEvents.length > 0) {
       const primaryType = getPrimaryEventType(dayEvents);
       cell.classList.add(`cal-${primaryType}`);
-      
-      // Make clickable
-      cell.style.cursor = 'pointer';
-      cell.addEventListener('click', () => showCalendarModal(dateStr, dayEvents));
       
       // Add event marker dot if any event has marker: true
       if (hasMarker(dayEvents)) {
@@ -157,6 +168,12 @@ function renderCalendar(month, year) {
         count.textContent = dayEvents.length;
         cell.appendChild(count);
       }
+    }
+    
+    // Make clickable if there are events OR if it's a weekday (Mon-Fri)
+    if (dayEvents.length > 0 || (weekday >= 1 && weekday <= 5)) {
+      cell.style.cursor = 'pointer';
+      cell.addEventListener('click', () => showCalendarModal(dateStr, dayEvents));
     }
     
     // Add day number
@@ -183,7 +200,7 @@ function showCalendarModal(dateStr, events) {
   // Clear body
   body.innerHTML = '';
   
-  // Add events
+  // Add events first (if any)
   events.forEach(event => {
     const eventDiv = document.createElement('div');
     eventDiv.className = 'calModal-event';
@@ -234,6 +251,149 @@ function showCalendarModal(dateStr, events) {
     body.appendChild(eventDiv);
   });
   
+  // Get weekday and add schedule section (if weekday is Mon-Fri)
+  const date = new Date(dateStr + 'T00:00:00');
+  const weekday = date.getDay();
+  
+  if (weekday >= 1 && weekday <= 5 && schedule.length > 0) {
+    const weekdayNames = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+    
+    // Add separator if there are events
+    if (events.length > 0) {
+      const separator = document.createElement('hr');
+      separator.style.margin = '16px 0';
+      separator.style.border = 'none';
+      separator.style.borderTop = '1px solid var(--line)';
+      body.appendChild(separator);
+    }
+    
+    // Schedule section
+    const scheduleSection = document.createElement('div');
+    scheduleSection.className = 'calModal-schedule';
+    
+    // Schedule title
+    const scheduleTitle = document.createElement('h4');
+    scheduleTitle.className = 'calModal-schedule-title';
+    scheduleTitle.textContent = `📚 Horário de Aulas — ${weekdayNames[weekday]}`;
+    scheduleSection.appendChild(scheduleTitle);
+    
+    // Year filter buttons
+    const filterDiv = document.createElement('div');
+    filterDiv.className = 'calModal-schedule-filter';
+    
+    const years = [
+      { value: 0, label: 'Todos' },
+      { value: 1, label: '1º Ano' },
+      { value: 2, label: '2º Ano' },
+      { value: 3, label: '3º Ano' },
+      { value: 4, label: '4º Ano' },
+      { value: 5, label: '5º Ano' }
+    ];
+    
+    years.forEach(y => {
+      const btn = document.createElement('button');
+      btn.className = 'schedule-year-btn';
+      if (y.value === selectedYear) {
+        btn.classList.add('schedule-year-btn--active');
+      }
+      btn.textContent = y.label;
+      btn.onclick = () => {
+        selectedYear = y.value;
+        // Update all buttons
+        filterDiv.querySelectorAll('.schedule-year-btn').forEach(b => {
+          b.classList.remove('schedule-year-btn--active');
+        });
+        btn.classList.add('schedule-year-btn--active');
+        // Re-render schedule in modal
+        showCalendarModal(dateStr, events);
+        // Also update the main schedule grid if it exists
+        if (document.getElementById('scheduleGrid')) {
+          renderScheduleGrid();
+        }
+        // Update standalone filter buttons if they exist
+        document.querySelectorAll('#scheduleFilter .schedule-year-btn').forEach(b => {
+          b.classList.toggle('schedule-year-btn--active', parseInt(b.dataset.year) === selectedYear);
+        });
+      };
+      filterDiv.appendChild(btn);
+    });
+    
+    scheduleSection.appendChild(filterDiv);
+    
+    // Get schedule entries for this weekday
+    const daySchedule = schedule.filter(s => 
+      s.weekday === weekday && 
+      (selectedYear === 0 || s.year === selectedYear)
+    );
+    
+    if (daySchedule.length === 0) {
+      const noSchedule = document.createElement('p');
+      noSchedule.className = 'muted';
+      noSchedule.style.marginTop = '12px';
+      noSchedule.textContent = 'Nenhuma aula encontrada para o filtro selecionado.';
+      scheduleSection.appendChild(noSchedule);
+    } else {
+      // Group by time
+      const timeGroups = {};
+      daySchedule.forEach(s => {
+        if (!timeGroups[s.time]) {
+          timeGroups[s.time] = [];
+        }
+        timeGroups[s.time].push(s);
+      });
+      
+      // Sort times
+      const times = Object.keys(timeGroups).sort();
+      
+      times.forEach(time => {
+        const timeGroup = document.createElement('div');
+        timeGroup.className = 'schedule-time-group';
+        
+        const timeLabel = document.createElement('span');
+        timeLabel.className = 'schedule-time-label';
+        timeLabel.textContent = time;
+        timeGroup.appendChild(timeLabel);
+        
+        timeGroups[time].forEach(entry => {
+          const entryDiv = document.createElement('div');
+          entryDiv.className = 'schedule-entry';
+          
+          const yearBadge = document.createElement('span');
+          yearBadge.className = 'schedule-year-badge';
+          yearBadge.textContent = `${entry.year}º`;
+          entryDiv.appendChild(yearBadge);
+          
+          const disciplineName = document.createElement('strong');
+          disciplineName.textContent = entry.discipline;
+          entryDiv.appendChild(disciplineName);
+          
+          if (entry.professor || entry.room) {
+            const details = document.createElement('span');
+            details.className = 'schedule-detail';
+            const parts = [];
+            if (entry.professor) parts.push(`Prof. ${entry.professor}`);
+            if (entry.room) parts.push(`Sala ${entry.room}`);
+            details.textContent = parts.join(' · ');
+            entryDiv.appendChild(details);
+          }
+          
+          if (entry.code) {
+            const code = document.createElement('span');
+            code.className = 'schedule-code';
+            code.textContent = entry.code;
+            entryDiv.appendChild(code);
+          }
+          
+          timeGroup.appendChild(entryDiv);
+        });
+        
+        scheduleSection.appendChild(timeGroup);
+      });
+    }
+    
+    body.appendChild(scheduleSection);
+  }
+  
   // Show modal
   modal.classList.add('calendarModal--visible');
 }
@@ -264,6 +424,84 @@ function nextMonth() {
     currentYear++;
   }
   renderCalendar(currentMonth, currentYear);
+}
+
+// Go to today
+function goToday() {
+  const now = new Date();
+  currentMonth = now.getMonth();
+  currentYear = now.getFullYear();
+  renderCalendar(currentMonth, currentYear);
+}
+
+// Filter schedule by year
+function filterSchedule(year) {
+  selectedYear = year;
+  // Update button active states
+  document.querySelectorAll('.schedule-year-btn').forEach(btn => {
+    btn.classList.toggle('schedule-year-btn--active', parseInt(btn.dataset.year) === year);
+  });
+  renderScheduleGrid();
+}
+
+// Render schedule grid
+function renderScheduleGrid() {
+  const grid = document.getElementById('scheduleGrid');
+  if (!grid || !schedule.length) return;
+  
+  const weekdays = [
+    { num: 1, name: 'Segunda' },
+    { num: 2, name: 'Terça' },
+    { num: 3, name: 'Quarta' },
+    { num: 4, name: 'Quinta' },
+    { num: 5, name: 'Sexta' }
+  ];
+  const times = ['14:00', '16:00'];
+  
+  // Build HTML table
+  let html = '<div class="schedule-table">';
+  
+  // Header row
+  html += '<div class="schedule-table-row schedule-table-header">';
+  html += '<div class="schedule-table-cell schedule-table-time-header">Horário</div>';
+  weekdays.forEach(w => {
+    html += `<div class="schedule-table-cell schedule-table-day-header">${w.name}</div>`;
+  });
+  html += '</div>';
+  
+  // Time rows
+  times.forEach(time => {
+    html += '<div class="schedule-table-row">';
+    html += `<div class="schedule-table-cell schedule-table-time">${time}</div>`;
+    
+    weekdays.forEach(w => {
+      const entries = schedule.filter(s => 
+        s.weekday === w.num && 
+        s.time === time && 
+        (selectedYear === 0 || s.year === selectedYear)
+      );
+      
+      html += '<div class="schedule-table-cell">';
+      entries.forEach(e => {
+        const yearColors = { 1: '#4caf50', 2: '#2196f3', 3: '#9c27b0', 4: '#ff9800', 5: '#f44336' };
+        html += `
+          <div class="schedule-card" style="border-left: 3px solid ${yearColors[e.year] || '#ccc'}">
+            <span class="schedule-card-year">${e.year}º</span>
+            <strong class="schedule-card-name">${e.discipline}</strong>
+            ${e.professor ? `<span class="schedule-card-prof">${e.professor}</span>` : ''}
+            ${e.room ? `<span class="schedule-card-room">📍 ${e.room}</span>` : ''}
+            ${e.code ? `<span class="schedule-card-code">${e.code}</span>` : ''}
+          </div>
+        `;
+      });
+      html += '</div>';
+    });
+    
+    html += '</div>';
+  });
+  
+  html += '</div>';
+  grid.innerHTML = html;
 }
 
 // Close modal on click outside
