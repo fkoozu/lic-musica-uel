@@ -1,0 +1,478 @@
+[
+  {
+    "type": "resultado",
+    "title": "Resultado dos Pedidos de Rematrícula",
+    "description": "Resultado dos Pedidos de Rematrícula: Publicação, em edital, do resultado dos pedidos de rematrícula de estudantes desistentes dos Cursos de Graduação para o ano letivo de 2027.",
+    "marker": true,
+    "date": "2026-02-01"
+  },
+  {
+    "type": "docente",
+    "title": "Análise dos Pedidos de Prorrogação do Prazo Máximo de Conclusão de Curso",
+    "description": "Análise dos Pedidos de Prorrogação do Prazo Máximo de Conclusão de Curso: Último dia para o Coordenador(a) ou Vice-Coordenador(a) do Colegiado para análise dos pedidos de prorrogação do prazo máximo de conclusão de curso dos estudantes que atingem o prazo no 2º semestre letivo de 2027.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-02-01"
+  },
+  {
+    "type": "matricula",
+    "title": "Estudante Especial",
+    "description": "Estudante Especial: Inscrição em atividades acadêmicas isoladas ofertadas pelos Cursos de Graduação.",
+    "marker": true,
+    "date": "2026-02-02"
+  },
+  {
+    "type": "matricula",
+    "title": "Estudante Especial",
+    "description": "Estudante Especial: Inscrição em atividades acadêmicas isoladas ofertadas pelos Cursos de Graduação.",
+    "marker": true,
+    "date": "2026-02-03"
+  },
+  {
+    "type": "docente",
+    "title": "Prazo máximo para análise dos pedidos de prorrogação de conclusão de curso",
+    "description": "Prazo máximo para análise dos pedidos de prorrogação de conclusão de curso: Último dia para que o Coordenador(a) ou Vice-Coordenador(a) do Colegiado realize a análise dos pedidos de prorrogação de conclusão de curso dos estudantes que estão sujeitos ao jubilamento no 2º semestre letivo de 2026.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-02-03"
+  },
+  {
+    "type": "evento",
+    "title": "Edital – Artigo 43 do Regimento Geral da UEL",
+    "description": "Edital – Artigo 43 do Regimento Geral da UEL: Publicação, em edital, da relação de estudantes desligados, conforme disposto no Artigo 43, inciso VII, do Regimento Geral da UEL.",
+    "date": "2026-02-06"
+  },
+  {
+    "type": "resultado",
+    "title": "Resultado dos Pedidos de Rematrícula",
+    "description": "Resultado dos Pedidos de Rematrícula: Publicação, em edital, do resultado dos pedidos de rematrícula dos estudantes desistentes dos Cursos de Graduação para o ano letivo de 2026.",
+    "marker": true,
+    "date": "2026-02-06"
+  },
+  {
+    "type": "matricula",
+    "title": "Período de Reconsideração – Artigo 43, Inciso VII, do Regimento Geral da UEL",
+    "description": "Período de Reconsideração – Artigo 43, Inciso VII, do Regimento Geral da UEL: Período destinado aos estudantes com matrículas canceladas, nos termos do Artigo 43, inciso VII, do Regimento Geral da UEL, para protocolarem pedido de reconsideração referente ao 1º semestre letivo de 2026.",
+    "marker": true,
+    "start": "2026-02-06",
+    "end": "2026-03-20"
+  },
+  {
+    "type": "matricula",
+    "title": "Reconsideração – Artigo 43, Inciso VII, do Regimento Geral da UEL",
+    "description": "Reconsideração – Artigo 43, Inciso VII, do Regimento Geral da UEL: Período destinado ao Colegiado de Curso para análise dos pedidos de reconsideração de cancelamento de matrícula dos estudantes cancelados com base no Artigo 43, inciso VII, do Regimento Geral da UEL, referente ao 1º semestre letivo de 2026.",
+    "marker": true,
+    "start": "2026-02-06",
+    "end": "2026-03-29"
+  },
+  {
+    "type": "matricula",
+    "title": "Inscrição em Disciplinas Especiais, Especial - Libras, Eletivas e Optativas",
+    "description": "Inscrição em Disciplinas Especiais, Especial - Libras, Eletivas e Optativas: Período destinado à inscrição nessas disciplinas, com oferta anual e no 1º semestre letivo, para os estudantes de todos os cursos que tenham previsão dessas atividades em seus projetos pedagógicos.",
+    "marker": true,
+    "start": "2026-02-09",
+    "end": "2026-02-18"
+  },
+  {
+    "type": "evento",
+    "title": "Alteração ou Cancelamento de Habilitação, Núcleo ou Ênfase",
+    "description": "Alteração ou Cancelamento de Habilitação, Núcleo ou Ênfase: Período para solicitação de alteração ou cancelamento.",
+    "date": "2026-02-09"
+  },
+  {
+    "type": "matricula",
+    "title": "Ajuste de Matrícula",
+    "description": "Ajuste de Matrícula: Prazo destinado aos estudantes regularmente matriculados nos Sistemas Acadêmicos de Crédito Anual, Crédito Semestral e Matrícula por Atividade Acadêmica - exceto os ingressantes - para realizarem ajustes em suas matrículas, por meio do Portal do Estudante, nas atividades acadêmicas ofertadas no 1º semestre e anuais.",
+    "marker": true,
+    "start": "2026-02-09",
+    "end": "2026-02-18"
+  },
+  {
+    "type": "docente",
+    "title": "Registro dos Programas das Atividades Acadêmicas",
+    "description": "Registro dos Programas das Atividades Acadêmicas: Período destinado aos docentes para o registro dos programas, com aprovação do colegiado, atividades acadêmicas referentes ao 1º semestre e anuais.",
+    "tag": "professor",
+    "marker": true,
+    "start": "2026-02-09",
+    "end": "2026-04-01"
+  },
+  {
+    "type": "matricula",
+    "title": "Matrícula dos Ingressantes Indígenas",
+    "description": "Matrícula dos Ingressantes Indígenas: Realização da matrícula presencial dos candidatos classificados no Vestibular dos Povos Indígenas do Paraná para o ano letivo de 2026.",
+    "marker": true,
+    "date": "2026-02-12"
+  },
+  {
+    "type": "matricula",
+    "title": "Colação de Grau",
+    "description": "Colação de Grau: Cerimônia destinada aos concluintes do ano letivo de 2025 e aos demais estudantes remanescentes aptos à colação.",
+    "marker": true,
+    "date": "2026-02-12"
+  },
+  {
+    "type": "matricula",
+    "title": "Colação de Grau",
+    "description": "Colação de Grau: Cerimônia destinada aos concluintes do ano letivo de 2025 e aos demais estudantes remanescentes aptos à colação.",
+    "marker": true,
+    "date": "2026-02-13"
+  },
+  {
+    "type": "docente",
+    "title": "Semana Pedagógica 2026",
+    "description": "Semana Pedagógica 2026: Período sugerido para a realização das atividades da Semana Pedagógica nos Cursos de Graduação, conforme planejamento de cada colegiado.",
+    "tag": "professor",
+    "marker": true,
+    "start": "2026-02-23",
+    "end": "2026-02-27"
+  },
+  {
+    "type": "evento",
+    "title": "Atividades de Recepção PCD pelo NAC",
+    "description": "Atividades de Recepção PCD pelo NAC: Período destinado à realização de atividades voltadas aos prováveis ingressantes 2026, selecionados pela reserva de vagas para Pessoas com Deficiência (PCD), com o objetivo de acolhimento e orientação inicial.",
+    "start": "2026-02-23",
+    "end": "2026-02-27"
+  },
+  {
+    "type": "resultado",
+    "title": "Resultado – Estudante Especial",
+    "description": "Resultado – Estudante Especial: Publicação, em edital, do resultado dos requerimentos de inscrição em atividades acadêmicas isoladas dos Cursos de Graduação.",
+    "marker": true,
+    "date": "2026-02-25"
+  },
+  {
+    "type": "matricula",
+    "title": "Análise do Ajuste de Matrícula",
+    "description": "Análise do Ajuste de Matrícula: Período destinado à análise, pelo Colegiado de Curso, dos ajustes de matrícula dos estudantes vinculados aos sistemas acadêmicos de Crédito Anual, Crédito Semestral e Matrícula por Atividade Acadêmica.",
+    "marker": true,
+    "start": "2026-02-25",
+    "end": "2026-02-27"
+  },
+  {
+    "type": "matricula",
+    "title": "Matrícula – Estudante Especial",
+    "description": "Matrícula – Estudante Especial: Período destinado à matrícula inicial e à renovação de matrícula dos Estudantes Especiais nos Cursos de Graduação.",
+    "marker": true,
+    "date": "2026-02-26"
+  },
+  {
+    "type": "matricula",
+    "title": "Matrícula – Estudante Especial",
+    "description": "Matrícula – Estudante Especial: Período destinado à matrícula inicial e à renovação de matrícula dos Estudantes Especiais nos Cursos de Graduação.",
+    "marker": true,
+    "date": "2026-02-27"
+  },
+  {
+    "type": "letivo",
+    "title": "Início das Aulas Regulares",
+    "description": "Início das Aulas Regulares: Início das aulas do 1º semestre letivo dos Cursos de Graduação.",
+    "date": "2026-03-02"
+  },
+  {
+    "type": "resultado",
+    "title": "Resultado do Ajuste de Matrícula",
+    "description": "Resultado do Ajuste de Matrícula: A divulgação do resultado será realizada diretamente no Portal do Estudante, conforme processamento das solicitações de ajuste de matrícula.",
+    "marker": true,
+    "date": "2026-03-02"
+  },
+  {
+    "type": "matricula",
+    "title": "Semana de Confirmação de Matrícula – Ingressantes 2026",
+    "description": "Semana de Confirmação de Matrícula – Ingressantes 2026: Período destinado à confirmação de matrícula dos ingressantes dos Cursos de Graduação.",
+    "marker": true,
+    "start": "2026-03-02",
+    "end": "2026-03-06"
+  },
+  {
+    "type": "evento",
+    "title": "Semana de Recepção dos Ingressantes",
+    "description": "Semana de Recepção dos Ingressantes: Período destinado às atividades de acolhimento e integração dos estudantes ingressantes nos Cursos de Graduação.",
+    "start": "2026-03-02",
+    "end": "2026-03-06"
+  },
+  {
+    "type": "matricula",
+    "title": "Reajuste de Matrícula",
+    "description": "Reajuste de Matrícula: Período destinado aos estudantes regularmente matriculados nos sistemas acadêmicos de Crédito Anual, Crédito Semestral e Matrícula por Atividade Acadêmica — exceto ingressantes — para realizarem reajustes em suas matrículas.",
+    "marker": true,
+    "start": "2026-03-02",
+    "end": "2026-03-06"
+  },
+  {
+    "type": "evento",
+    "title": "Solicitação de Aproveitamento de Estudos",
+    "description": "Solicitação de Aproveitamento de Estudos: Período destinado à solicitação de aproveitamento de estudos para atividades acadêmicas já cursadas em Instituições de Ensino Superior.",
+    "start": "2026-03-02",
+    "end": "2026-06-26"
+  },
+  {
+    "type": "matricula",
+    "title": "Suspensão da Matrícula na Série",
+    "description": "Suspensão da Matrícula na Série: Período destinado aos estudantes em situação de dependência para solicitação de suspensão da matrícula na série.",
+    "marker": true,
+    "start": "2026-03-02",
+    "end": "2026-04-15"
+  },
+  {
+    "type": "matricula",
+    "title": "Alteração da Matrícula de Dependência",
+    "description": "Alteração da Matrícula de Dependência: Período destinado à solicitação de alteração da matrícula em dependência.",
+    "marker": true,
+    "start": "2026-03-02",
+    "end": "2026-04-15"
+  },
+  {
+    "type": "matricula",
+    "title": "Cancelamento de Atividades Acadêmicas do 1º Semestre Letivo e Anuais",
+    "description": "Cancelamento de Atividades Acadêmicas do 1º Semestre Letivo e Anuais: Período destinado à solicitação de cancelamento das atividades acadêmicas do 1º semestre letivo e anuais.",
+    "marker": true,
+    "start": "2026-03-02",
+    "end": "2026-05-29"
+  },
+  {
+    "type": "matricula",
+    "title": "Cancelamento das Atividades Acadêmicas do 2º Semestre Letivo",
+    "description": "Cancelamento das Atividades Acadêmicas do 2º Semestre Letivo: Período destinado à solicitação de cancelamento das atividades acadêmicas do 2º semestre letivo.",
+    "marker": true,
+    "start": "2026-03-02",
+    "end": "2026-10-30"
+  },
+  {
+    "type": "matricula",
+    "title": "Trancamento de Matrícula",
+    "description": "Trancamento de Matrícula: Período destinado ao recebimento dos pedidos de trancamento de matrícula dos estudantes matriculados no Sistema Acadêmico de Crédito Semestral.",
+    "marker": true,
+    "start": "2026-03-03",
+    "end": "2026-04-03"
+  },
+  {
+    "type": "matricula",
+    "title": "Trancamento de Matrícula",
+    "description": "Trancamento de Matrícula: Período destinado ao recebimento dos pedidos de trancamento de matrícula dos estudantes matriculados nos Sistemas Acadêmicos de Crédito Anual, Matrícula por Atividade Acadêmica e Matrícula por Série.",
+    "marker": true,
+    "start": "2026-03-03",
+    "end": "2026-05-05"
+  },
+  {
+    "type": "matricula",
+    "title": "Confirmação de Matrícula",
+    "description": "Confirmação de Matrícula: Último dia para confirmação de matrícula dos ingressantes dos Cursos de Graduação.",
+    "marker": true,
+    "date": "2026-03-06"
+  },
+  {
+    "type": "letivo",
+    "title": "Cancelamento de Disciplinas Especiais, Especial - Libras, Eletivas e Optativas",
+    "description": "Cancelamento de Disciplinas Especiais, Especial - Libras, Eletivas e Optativas: Período destinado à solicitação de cancelamento.",
+    "start": "2026-03-09",
+    "end": "2026-05-29"
+  },
+  {
+    "type": "matricula",
+    "title": "Solicitação de Transferência Interna de Turno e Permuta",
+    "description": "Solicitação de Transferência Interna de Turno e Permuta: Período destinado aos estudantes regularmente matriculados nos cursos vinculados ao Sistema Acadêmico de Crédito Semestral.",
+    "marker": true,
+    "start": "2026-03-09",
+    "end": "2026-05-05"
+  },
+  {
+    "type": "matricula",
+    "title": "Solicitação de Transferência Interna de Turno e Permuta",
+    "description": "Solicitação de Transferência Interna de Turno e Permuta: Período destinado aos estudantes regularmente matriculados nos cursos vinculados ao Sistema Acadêmico de Crédito Anual.",
+    "marker": true,
+    "start": "2026-03-09",
+    "end": "2026-09-30"
+  },
+  {
+    "type": "resultado",
+    "title": "Resultado dos Requerimentos – Disciplinas Especiais, Eletivas e Optativas",
+    "description": "Resultado dos Requerimentos – Disciplinas Especiais, Especial - Libras, Eletivas e Optativas.",
+    "marker": true,
+    "date": "2026-03-13"
+  },
+  {
+    "type": "resultado",
+    "title": "Resultado de Estudantes Jubilados",
+    "description": "Resultado de Estudantes Jubilados: Publicação, em edital, da relação de estudantes jubilados no 2º semestre letivo e nas atividades anuais de 2025.",
+    "marker": true,
+    "date": "2026-03-30"
+  },
+  {
+    "type": "docente",
+    "title": "Registro dos Programas das Atividades Acadêmicas",
+    "description": "Último dia para os docentes registrarem os programas das atividades acadêmicas referentes ao 1º semestre letivo e às de oferta anual.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-04-01"
+  },
+  {
+    "type": "matricula",
+    "title": "Trancamento de Matrícula",
+    "description": "Trancamento de Matrícula: Último dia para solicitação de trancamento de matrícula pelos estudantes matriculados no Sistema Acadêmico de Crédito Semestral.",
+    "marker": true,
+    "date": "2026-04-03"
+  },
+  {
+    "type": "matricula",
+    "title": "Suspensão da Matrícula na Série",
+    "description": "Último dia para que os estudantes em situação de dependência solicitem a suspensão da matrícula na série.",
+    "marker": true,
+    "date": "2026-04-15"
+  },
+  {
+    "type": "evento",
+    "title": "DIA DE LUTA PELA EDUCAÇÃO",
+    "description": "DIA DE LUTA PELA EDUCAÇÃO - EDUCAÇÃO SEM VIOLÊNCIA.",
+    "date": "2026-04-29"
+  },
+  {
+    "type": "evento",
+    "title": "TÉRMINO DO 1º BIMESTRE",
+    "description": "TÉRMINO DO 1º BIMESTRE.",
+    "date": "2026-05-05"
+  },
+  {
+    "type": "matricula",
+    "title": "Trancamento de Matrícula",
+    "description": "Último dia para recebimento dos pedidos de trancamento de matrícula dos estudantes matriculados nos Sistemas Acadêmicos de Crédito Anual.",
+    "marker": true,
+    "date": "2026-05-05"
+  },
+  {
+    "type": "docente",
+    "title": "Registro de Frequência e Avaliação – 1º Bimestre",
+    "description": "Último dia para registro da frequência e das avaliações do 1º bimestre na Pauta Eletrônica.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-05-08"
+  },
+  {
+    "type": "matricula",
+    "title": "Cancelamento de Atividades Acadêmicas do 1º Semestre Letivo e Anuais",
+    "description": "Último dia para solicitar o cancelamento.",
+    "marker": true,
+    "date": "2026-05-29"
+  },
+  {
+    "type": "matricula",
+    "title": "Renovação de Matrícula",
+    "description": "Período destinado à renovação de matrícula para o 2º semestre letivo de 2026.",
+    "marker": true,
+    "start": "2026-06-03",
+    "end": "2026-07-03"
+  },
+  {
+    "type": "letivo",
+    "title": "Término das Aulas Regulares - 1º semestre letivo",
+    "description": "Encerramento das aulas do 1º semestre letivo dos Cursos de Graduação.",
+    "date": "2026-07-10"
+  },
+  {
+    "type": "resultado",
+    "title": "Registro dos Resultados Parciais",
+    "description": "Último dia para registro, na Pauta Eletrônica, dos resultados parciais das atividades acadêmicas do 1º semestre letivo.",
+    "marker": true,
+    "date": "2026-07-13"
+  },
+  {
+    "type": "exame",
+    "title": "Exame Final – 1º Semestre Letivo",
+    "description": "Período destinado à realização dos exames finais das atividades acadêmicas do 1º semestre letivo.",
+    "marker": true,
+    "date": "2026-07-17"
+  },
+  {
+    "type": "resultado",
+    "title": "Fechamento do Rendimento Escolar na Pauta Eletrônica",
+    "description": "Último dia para registro dos resultados das atividades acadêmicas do 1º semestre letivo.",
+    "marker": true,
+    "date": "2026-07-20"
+  },
+  {
+    "type": "letivo",
+    "title": "Início das Aulas Regulares",
+    "description": "Início das aulas do 2º semestre letivo dos Cursos de Graduação.",
+    "date": "2026-08-03"
+  },
+  {
+    "type": "matricula",
+    "title": "Ajuste de Matrícula – 2º Semestre Letivo",
+    "description": "Período para realizarem ajustes na matrícula nas atividades acadêmicas ofertadas para o 2º semestre.",
+    "marker": true,
+    "start": "2026-07-30",
+    "end": "2026-08-05"
+  },
+  {
+    "type": "matricula",
+    "title": "Semana de Colação de Grau",
+    "description": "Colação de grau dos concluintes do 1º semestre letivo vigente.",
+    "marker": true,
+    "start": "2026-08-24",
+    "end": "2026-08-28"
+  },
+  {
+    "type": "evento",
+    "title": "TÉRMINO DO 3º BIMESTRE",
+    "description": "TÉRMINO DO 3º BIMESTRE.",
+    "date": "2026-09-30"
+  },
+  {
+    "type": "docente",
+    "title": "Registro de Frequência e Avaliação – 3º Bimestre",
+    "description": "Último dia para registro da frequência e das avaliações do 3º bimestre na Pauta Eletrônica.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-10-02"
+  },
+  {
+    "type": "matricula",
+    "title": "Renovação de Matrícula",
+    "description": "Período destinado aos estudantes regularmente matriculados para a renovação de matrícula, referente ao ano letivo de 2027.",
+    "marker": true,
+    "start": "2026-10-20",
+    "end": "2026-11-24"
+  },
+  {
+    "type": "matricula",
+    "title": "Cancelamento de Atividades Acadêmicas do 2º Semestre Letivo",
+    "description": "Último dia para solicitação de cancelamento.",
+    "marker": true,
+    "date": "2026-10-30"
+  },
+  {
+    "type": "letivo",
+    "title": "Término das Aulas Regulares – 2º semestre letivo",
+    "description": "Encerramento das aulas regulares dos cursos de graduação referentes ao 2º semestre letivo.",
+    "date": "2026-12-09"
+  },
+  {
+    "type": "resultado",
+    "title": "Registro dos Resultados Parciais",
+    "description": "Último dia para registro, na Pauta Eletrônica, dos resultados parciais das atividades acadêmicas anuais e do 2º semestre.",
+    "marker": true,
+    "date": "2026-12-10"
+  },
+  {
+    "type": "exame",
+    "title": "Período destinado à realização do Exame Final",
+    "description": "Período destinado à realização do Exame Final.",
+    "marker": true,
+    "date": "2026-12-17"
+  },
+  {
+    "type": "docente",
+    "title": "Fechamento do Rendimento Escolar – Pauta Eletrônica",
+    "description": "Último dia para registro, na Pauta Eletrônica, das atividades acadêmicas anuais e do 2º semestre.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-12-18"
+  },
+  {
+    "type": "docente",
+    "title": "Bloqueio de Acesso ao Rendimento Escolar – Pauta Eletrônica",
+    "description": "Bloqueio do acesso docente ao registro do rendimento escolar, às 23h55.",
+    "tag": "professor",
+    "marker": true,
+    "date": "2026-12-22"
+  }
+]
