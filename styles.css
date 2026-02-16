@@ -58,13 +58,21 @@ a:hover{ text-decoration: underline; }
   font-weight: 650;
   font-size: 18px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .mobileNav{
   border-top: none;
-  padding: 10px 20px 14px;
+  padding: 0 20px;
   display:grid;
   gap: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.mobileNav--open{
+  max-height: 500px;
+  padding: 10px 20px 14px;
 }
 .mobileNav a{
   padding: 12px 14px;
@@ -72,8 +80,14 @@ a:hover{ text-decoration: underline; }
   background: var(--soft);
   color: var(--muted);
   font-size: 15px;
+  transition: all 0.2s ease;
 }
 .mobileNav a:hover{ color: var(--text); text-decoration: none; }
+.mobileNav a.active{
+  background: var(--accentSoft);
+  color: var(--accent);
+  font-weight: 650;
+}
 
 .desktopNav{
   display: flex;
@@ -93,9 +107,84 @@ a:hover{ text-decoration: underline; }
   background: var(--soft);
   text-decoration: none;
 }
+.desktopNav a.active{
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* External link indicator */
+.desktopNav a[target="_blank"]::after,
+.mobileNav a[target="_blank"]::after{
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+/* Focus visible styles for accessibility */
+.desktopNav a:focus-visible,
+.mobileNav a:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
 
 .hero{ padding: 28px 0 34px; }
 .hero__head{ margin: 18px 0 18px; }
+
+/* Scroll margin for sticky header compensation */
+#curso, #documentos, #contato, #inicio {
+  scroll-margin-top: 80px;
+}
+
+/* Overlay for mobile menu */
+.overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.overlay--visible{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Back to top button */
+.backToTop{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 45;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(15,138,95,.3);
+}
+.backToTop--visible{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.backToTop:hover{
+  background: #0c6e4d;
+  box-shadow: 0 6px 16px rgba(15,138,95,.4);
+}
+.backToTop:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
 .badge--highlight{
   display: inline-block;
@@ -533,5 +622,12 @@ input[type="search"]:focus, select:focus{
     flex-direction: column;
     text-align: center;
     gap: 8px;
+  }
+}
+
+/* Hide overlay on desktop */
+@media (min-width: 761px){
+  .overlay{
+    display: none;
   }
 }

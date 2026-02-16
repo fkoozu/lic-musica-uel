@@ -158,24 +158,46 @@ function setupUI() {
   // Mobile menu
   const menuBtn = el("menuBtn");
   const mobileNav = el("mobileNav");
+  const overlay = el("overlay");
 
   menuBtn.addEventListener("click", () => {
-    const isOpen = !mobileNav.hasAttribute("hidden");
+    const isOpen = mobileNav.classList.contains("mobileNav--open");
     if (isOpen) {
-      mobileNav.setAttribute("hidden", "");
+      mobileNav.classList.remove("mobileNav--open");
+      overlay.classList.remove("overlay--visible");
       menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.textContent = "☰";
     } else {
-      mobileNav.removeAttribute("hidden");
+      mobileNav.classList.add("mobileNav--open");
+      overlay.classList.add("overlay--visible");
       menuBtn.setAttribute("aria-expanded", "true");
+      menuBtn.textContent = "✕";
     }
   });
 
+  // Close menu when clicking overlay
+  overlay.addEventListener("click", () => {
+    mobileNav.classList.remove("mobileNav--open");
+    overlay.classList.remove("overlay--visible");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
+  });
+
+  // Close menu when clicking nav links
   mobileNav.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => {
-      mobileNav.setAttribute("hidden", "");
+      mobileNav.classList.remove("mobileNav--open");
+      overlay.classList.remove("overlay--visible");
       menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.textContent = "☰";
     });
   });
+
+  // Scroll spy with IntersectionObserver
+  setupScrollSpy();
+
+  // Back to top button
+  setupBackToTop();
 }
 
 setupUI();
@@ -194,3 +216,54 @@ loadDocs().catch((err) => {
   `;
   el("count").textContent = "0";
 });
+
+// Scroll Spy - Track active section
+function setupScrollSpy() {
+  const sections = document.querySelectorAll("#inicio, #curso, #documentos, #contato");
+  const navLinks = document.querySelectorAll(".desktopNav a, .mobileNav a");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "-80px 0px -60% 0px",
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        
+        // Remove active class from all links
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+        });
+
+        // Add active class to links that match this section
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+// Back to top button
+function setupBackToTop() {
+  const backToTop = el("backToTop");
+  
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("backToTop--visible");
+    } else {
+      backToTop.classList.remove("backToTop--visible");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
