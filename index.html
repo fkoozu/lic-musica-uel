@@ -10,291 +10,319 @@
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <img class="brand__logo" src="logo.png" alt="Logo UEL" />
-        <span class="brand__text">Licenciatura em Música – UEL</span>
-      </a>
+  <div class="appShell">
+    <!-- Sidebar (desktop/tablet) -->
+    <aside class="sideNav" aria-label="Atalhos">
+      <a class="navItem" href="#inicio" title="Início" aria-label="Início">🏠</a>
+      <a class="navItem" href="#calendario" title="Calendário 2026" aria-label="Calendário 2026">📅</a>
+      <a class="navItem" href="#horarios" title="Horário 2026" aria-label="Horário 2026">🕒</a>
+      <a class="navItem" href="#documentos" title="Documentos" aria-label="Documentos">📄</a>
+      <a class="navItem" href="#curso" title="Sobre o curso" aria-label="Sobre o curso">🎓</a>
 
-      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-      
-      <nav class="desktopNav" aria-label="Navegação principal">
-        <a href="#curso">O Curso</a>
-        <a href="#documentos">Documentos</a>
-        <a href="https://graduacao.uel.br/musica/projetos/" target="_blank" rel="noopener">Projetos</a>
-        <a href="https://sites.uel.br/prograd/estudante/estagios-e-intercambios/" target="_blank" rel="noopener">Estágio</a>
-        <a href="https://graduacao.uel.br/musica/corpo-docente/" target="_blank" rel="noopener">Corpo Docente</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
+      <a class="navItem" href="https://graduacao.uel.br/musica/projetos/" target="_blank" rel="noopener"
+         title="Projetos" aria-label="Projetos (abre em nova aba)">🎵</a>
 
-    <div class="mobileNav" id="mobileNav" hidden>
-      <a href="#curso">O Curso</a>
-      <a href="#documentos">Documentos</a>
-      <a href="#calendario">Calendário</a>
-      <a href="#horarios">Horários</a>
-      <a href="https://graduacao.uel.br/musica/projetos/" target="_blank" rel="noopener">Projetos (Pes/En/Ex)</a>
-      <a href="https://sites.uel.br/prograd/estudante/estagios-e-intercambios/" target="_blank" rel="noopener">Estágio</a>
-      <a href="#documentos">TCC</a>
-      <a href="https://graduacao.uel.br/musica/corpo-docente/" target="_blank" rel="noopener">Corpo Docente</a>
-      <a href="#contato">Contato</a>
-    </div>
-  </header>
+      <a class="navItem" href="https://sites.uel.br/prograd/estudante/estagios-e-intercambios/" target="_blank" rel="noopener"
+         title="Estágio" aria-label="Estágio (abre em nova aba)">🧑‍🏫</a>
 
-  <main id="inicio" class="container">
-    <section class="hero">
-      <div class="hero__head">
-        <div class="badge badge--highlight">🏆 Melhor Licenciatura em Música do Brasil - ENADE 2021</div>
-        <h1>Licenciatura em Música</h1>
-        <p class="lead">
-          Transforme sua paixão pela música em profissão. Formação de excelência que integra talento, técnica, arte e educação musical.
-        </p>
-      </div>
+      <a class="navItem" href="https://graduacao.uel.br/musica/corpo-docente/" target="_blank" rel="noopener"
+         title="Corpo docente" aria-label="Corpo docente (abre em nova aba)">👥</a>
 
-      <!-- Cards de informações rápidas -->
-      <div class="quick-info">
-        <div class="info-card">
-          <div class="info-card__icon">📅</div>
-          <div class="info-card__label">Duração</div>
-          <div class="info-card__value">5 anos</div>
+      <a class="navItem" href="#contato" title="Contato" aria-label="Contato">📞</a>
+    </aside>
+
+    <!-- Conteúdo (lado direito) -->
+    <div class="mainContent">
+      <header class="topbar">
+        <div class="container topbar__inner">
+          <a class="brand" href="#inicio" aria-label="Ir para o início">
+            <img class="brand__logo" src="logo.png" alt="Logo UEL" />
+            <span class="brand__text">Licenciatura em Música – UEL</span>
+          </a>
         </div>
-        <div class="info-card">
-          <div class="info-card__icon">⏰</div>
-          <div class="info-card__label">Turno</div>
-          <div class="info-card__value">Vespertino</div>
-        </div>
-        <div class="info-card">
-          <div class="info-card__icon">🎓</div>
-          <div class="info-card__label">Vagas/ano</div>
-          <div class="info-card__value">20</div>
-        </div>
-        <div class="info-card">
-          <div class="info-card__icon">⭐</div>
-          <div class="info-card__label">Avaliação MEC</div>
-          <div class="info-card__value">Nota 5</div>
-        </div>
-      </div>
+      </header>
 
-      <!-- Layout 2 colunas no desktop / 1 coluna no mobile -->
-      <div class="split">
-        <!-- Coluna esquerda -->
-        <aside class="left" aria-label="Informações do curso">
-          <div class="panel" id="curso">
-            <h2>Informações Básicas</h2>
+      <main id="inicio" class="container">
+        <section class="hero">
+          <div class="hero__head">
+            <div class="badge badge--highlight">🏆 Melhor Licenciatura em Música do Brasil - ENADE 2021</div>
+            <h1>Licenciatura em Música</h1>
+            <p class="lead">
+              Transforme sua paixão pela música em profissão. Formação de excelência que integra talento, técnica, arte e educação musical.
+            </p>
+          </div>
 
-            <dl class="facts">
-              <div class="fact">
-                <dt>Grau</dt>
-                <dd>Licenciatura</dd>
-              </div>
-              <div class="fact">
-                <dt>Centro</dt>
-                <dd>CECA - Centro de Educação, Comunicação e Artes</dd>
-              </div>
-              <div class="fact">
-                <dt>Carga Horária</dt>
-                <dd>3.250 horas</dd>
-              </div>
-              <div class="fact">
-                <dt>Duração</dt>
-                <dd>Mínima: 5 anos | Máxima: 10 anos</dd>
-              </div>
-              <div class="fact">
-                <dt>Instituição</dt>
-                <dd>Universidade Estadual de Londrina (UEL)</dd>
-              </div>
-              <div class="fact">
-                <dt>Links oficiais</dt>
-                <dd>
-                  <a class="link" href="https://graduacao.uel.br/musica/" target="_blank" rel="noopener">Página institucional do curso</a>
-                  <span class="sep">•</span>
-                  <a class="link" href="https://graduacao.uel.br/musica/matriz-curricular/" target="_blank" rel="noopener">Matriz curricular</a>
-                </dd>
-              </div>
-            </dl>
-
-            <div class="callouts">
-              <a class="btn btn--primary" href="#documentos">Acessar documentos</a>
-              <a class="btn btn--soft" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">Contatos oficiais</a>
+          <!-- Cards de informações rápidas -->
+          <div class="quick-info">
+            <div class="info-card">
+              <div class="info-card__icon">📅</div>
+              <div class="info-card__label">Duração</div>
+              <div class="info-card__value">5 anos</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon">⏰</div>
+              <div class="info-card__label">Turno</div>
+              <div class="info-card__value">Vespertino</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon">🎓</div>
+              <div class="info-card__label">Vagas/ano</div>
+              <div class="info-card__value">20</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon">⭐</div>
+              <div class="info-card__label">Avaliação MEC</div>
+              <div class="info-card__value">Nota 5</div>
             </div>
           </div>
 
-          <div class="panel">
-            <h3>Sobre o Curso</h3>
-            <p class="muted">
-              O curso de Licenciatura em Música da UEL oferece formação de excelência que integra prática artística, 
-              fundamentos teóricos e dimensões pedagógicas. Nosso objetivo é formar músicos/educadores com sólido 
-              conhecimento histórico, consciência crítica e sensibilidade artística.
-            </p>
-            <p class="muted" style="margin-top: 12px;">
-              <strong>Diferenciais:</strong> Formação ampla em competências musicais, pedagógicas e sociopolíticas, 
-              com estímulo ao pensamento reflexivo e experiências práticas que envolvem análise, criação e performance musical.
-            </p>
-          </div>
+          <!-- Layout 2 colunas no desktop / 1 coluna no mobile -->
+          <div class="split">
+            <!-- Coluna esquerda -->
+            <aside class="left" aria-label="Informações do curso">
+              <div class="panel" id="curso">
+                <h2>Informações Básicas</h2>
 
-          <div class="panel">
-            <h3>Perfil do Egresso</h3>
-            <p class="muted">
-              Você será um músico/educador com:
-            </p>
-            <ul class="check-list">
-              <li>Sólido conhecimento histórico do pensamento musical</li>
-              <li>Consciência crítica, política e social</li>
-              <li>Domínio do ensino de música e prática musical</li>
-              <li>Sensibilidade artística e técnicas composicionais</li>
-              <li>Pensamento reflexivo e sensibilidade estética</li>
-              <li>Capacidade de atuar em diversos contextos socioculturais</li>
-            </ul>
-          </div>
+                <dl class="facts">
+                  <div class="fact">
+                    <dt>Grau</dt>
+                    <dd>Licenciatura</dd>
+                  </div>
+                  <div class="fact">
+                    <dt>Centro</dt>
+                    <dd>CECA - Centro de Educação, Comunicação e Artes</dd>
+                  </div>
 
-          <div class="panel">
-            <h3>Campos de Atuação</h3>
-            <ul class="check-list">
-              <li>Escolas de ensino fundamental e médio</li>
-              <li>Conservatórios e escolas livres de música</li>
-              <li>Orquestras, corais e grupos musicais</li>
-              <li>Estúdios de gravação e produção</li>
-              <li>Rádio e agências de publicidade</li>
-              <li>Direção e produção musical</li>
-            </ul>
-          </div>
+                  <div class="fact">
+                    <dt>Carga Horária</dt>
+                    <dd>3.250 horas</dd>
+                  </div>
+                  <div class="fact">
+                    <dt>Duração</dt>
+                    <dd>Mínima: 5 anos | Máxima: 10 anos</dd>
+                  </div>
+                  <div class="fact">
+                    <dt>Instituição</dt>
+                    <dd>Universidade Estadual de Londrina (UEL)</dd>
+                  </div>
+                  <div class="fact">
+                    <dt>Links oficiais</dt>
+                    <dd>
+                      <a class="link" href="https://graduacao.uel.br/musica/" target="_blank" rel="noopener">Página institucional do curso</a>
+                      <span class="sep">•</span>
+                      <a class="link" href="https://graduacao.uel.br/musica/matriz-curricular/" target="_blank" rel="noopener">Matriz curricular</a>
+                    </dd>
+                  </div>
+                </dl>
 
-          <div class="panel">
-            <h3>Ênfases Oferecidas</h3>
-            <p class="muted" style="margin-bottom: 14px;">
-              Escolha seu percurso formativo específico entre as áreas:
-            </p>
-            <div class="emphasis-grid">
-              <div class="emphasis-item">🎤 Canto</div>
-              <div class="emphasis-item">🥁 Percussão</div>
-              <div class="emphasis-item">🎸 Violão</div>
-              <div class="emphasis-item">🎹 Piano</div>
-              <div class="emphasis-item">🎼 Regência Coral</div>
-              <div class="emphasis-item">✍️ Arranjo e Composição</div>
-            </div>
-          </div>
-
-          <div class="panel" id="contato">
-            <h3>Contato</h3>
-            <p class="muted">
-              Para informações oficiais sobre coordenação, secretaria, telefone e e-mail institucional, 
-              acesse a página de contatos do curso.
-            </p>
-            <a class="btn btn--soft" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">
-              Abrir contatos oficiais
-            </a>
-          </div>
-        </aside>
-
-        <!-- Coluna direita -->
-        <section class="right" id="documentos" aria-label="Biblioteca de documentos">
-          <div class="panel panel--sticky">
-            <div class="docsHead">
-              <div>
-                <h2>Documentos para Download</h2>
-                <p class="muted">Busque por palavra-chave e filtre por categoria.</p>
+                <div class="callouts">
+                  <a class="btn btn--primary" href="#documentos">Acessar documentos</a>
+                  <a class="btn btn--soft" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">Contatos oficiais</a>
+                </div>
               </div>
-              <div class="kpi" aria-label="Contagem de resultados">
-                <span class="kpi__label">Resultados</span>
-                <span class="kpi__value" id="count">0</span>
+
+              <div class="panel">
+                <h3>Sobre o Curso</h3>
+                <p class="muted">
+                  O curso de Licenciatura em Música da UEL oferece formação de excelência que integra prática artística,
+                  fundamentos teóricos e dimensões pedagógicas. Nosso objetivo é formar músicos/educadores com sólido
+                  conhecimento histórico, consciência crítica e sensibilidade artística.
+                </p>
+                <p class="muted" style="margin-top: 12px;">
+                  <strong>Diferenciais:</strong> Formação ampla em competências musicais, pedagógicas e sociopolíticas,
+                  com estímulo ao pensamento reflexivo e experiências práticas que envolvem análise, criação e performance musical.
+                </p>
               </div>
-            </div>
 
-            <div class="toolbar">
-              <label class="search">
-                <span>Buscar</span>
-                <input id="q" type="search" placeholder="Ex.: PPC, ementas, estágio…" autocomplete="off" />
-              </label>
+              <div class="panel">
+                <h3>Perfil do Egresso</h3>
+                <p class="muted">
+                  Você será um músico/educador com:
+                </p>
+                <ul class="check-list">
+                  <li>Sólido conhecimento histórico do pensamento musical</li>
+                  <li>Consciência crítica, política e social</li>
+                  <li>Domínio do ensino de música e prática musical</li>
+                  <li>Sensibilidade artística e técnicas composicionais</li>
+                  <li>Pensamento reflexivo e sensibilidade estética</li>
+                  <li>Capacidade de atuar em diversos contextos socioculturais</li>
+                </ul>
+              </div>
 
-              <label class="select">
-                <span>Categoria</span>
-                <select id="cat">
-                  <option value="all">Todas</option>
-                </select>
-              </label>
+              <div class="panel">
+                <h3>Campos de Atuação</h3>
+                <ul class="check-list">
+                  <li>Escolas de ensino fundamental e médio</li>
+                  <li>Conservatórios e escolas livres de música</li>
+                  <li>Orquestras, corais e grupos musicais</li>
+                  <li>Estúdios de gravação e produção</li>
+                  <li>Rádio e agências de publicidade</li>
+                  <li>Direção e produção musical</li>
+                </ul>
+              </div>
 
-              <button class="btn btn--ghost" id="clearBtn" type="button">Limpar</button>
-            </div>
+              <div class="panel">
+                <h3>Ênfases Oferecidas</h3>
+                <p class="muted" style="margin-bottom: 14px;">
+                  Escolha seu percurso formativo específico entre as áreas:
+                </p>
+                <div class="emphasis-grid">
+                  <div class="emphasis-item">🎤 Canto</div>
+                  <div class="emphasis-item">🥁 Percussão</div>
+                  <div class="emphasis-item">🎸 Violão</div>
+                  <div class="emphasis-item">🎹 Piano</div>
+                  <div class="emphasis-item">🎼 Regência Coral</div>
+                  <div class="emphasis-item">✍️ Arranjo e Composição</div>
+                </div>
+              </div>
 
-            <noscript>
-              <p class="muted">Ative o JavaScript no seu navegador para visualizar e buscar os documentos.</p>
-            </noscript>
+              <div class="panel" id="contato">
+                <h3>Contato</h3>
+                <p class="muted">
+                  Para informações oficiais sobre coordenação, secretaria, telefone e e-mail institucional,
+                  acesse a página de contatos do curso.
+                </p>
+                <a class="btn btn--soft" href="https://graduacao.uel.br/musica/contatos/" target="_blank" rel="noopener">
+                  Abrir contatos oficiais
+                </a>
+              </div>
+            </aside>
 
-            <div id="docList" class="docList" aria-live="polite"></div>
+            <!-- Coluna direita -->
+            <section class="right" id="documentos" aria-label="Biblioteca de documentos">
+              <div class="panel panel--sticky">
+                <div class="docsHead">
+                  <div>
+                    <h2>Documentos para Download</h2>
+                    <p class="muted">Busque por palavra-chave e filtre por categoria.</p>
+                  </div>
+                  <div class="kpi" aria-label="Contagem de resultados">
+                    <span class="kpi__label">Resultados</span>
+                    <span class="kpi__value" id="count">0</span>
+                  </div>
+                </div>
 
-            <p class="footnote">
-              Se algum link mudar, basta atualizar o arquivo <code>docs.json</code> no GitHub.
-            </p>
+                <div class="toolbar">
+                  <label class="search">
+                    <span>Buscar</span>
+                    <input id="q" type="search" placeholder="Ex.: PPC, ementas, estágio…" autocomplete="off" />
+                  </label>
+
+                  <label class="select">
+                    <span>Categoria</span>
+                    <select id="cat">
+                      <option value="all">Todas</option>
+                    </select>
+                  </label>
+
+                  <button class="btn btn--ghost" id="clearBtn" type="button">Limpar</button>
+                </div>
+
+                <noscript>
+                  <p class="muted">Ative o JavaScript no seu navegador para visualizar e buscar os documentos.</p>
+                </noscript>
+
+                <div id="docList" class="docList" aria-live="polite"></div>
+
+                <p class="footnote">
+                  Se algum link mudar, basta atualizar o arquivo <code>docs.json</code> no GitHub.
+                </p>
+              </div>
+            </section>
           </div>
         </section>
+
+        <section class="calendar-section" id="calendario">
+          <div class="panel">
+            <h2>📅 Calendário Acadêmico 2026</h2>
+            <p class="muted">Navegue pelos meses e clique nos dias destacados para ver os eventos acadêmicos.</p>
+
+            <div class="calendar-controls">
+              <button class="btn btn--ghost calendar-nav-btn" onclick="prevMonth()" aria-label="Mês anterior">◀ Anterior</button>
+              <button class="btn btn--ghost calendar-nav-btn" onclick="goToday()" aria-label="Ir para hoje">📍 Hoje</button>
+              <span class="calendar-month-title" id="calendar-header"></span>
+              <button class="btn btn--ghost calendar-nav-btn" onclick="nextMonth()" aria-label="Próximo mês">Próximo ▶</button>
+            </div>
+
+            <div id="calendar" class="calendar-grid"></div>
+
+            <div class="calendar-legend">
+              <span class="legend-item"><span class="legend-dot cal-letivo"></span> Período Letivo</span>
+              <span class="legend-item"><span class="legend-dot cal-matricula"></span> Matrícula</span>
+              <span class="legend-item"><span class="legend-dot cal-docente"></span> Docente</span>
+              <span class="legend-item"><span class="legend-dot cal-resultado"></span> Resultado</span>
+              <span class="legend-item"><span class="legend-dot cal-exame"></span> Exame</span>
+              <span class="legend-item"><span class="legend-dot cal-evento"></span> Evento</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="schedule-section" id="horarios">
+          <div class="panel">
+            <h2>🎵 Horário de Aulas 2026</h2>
+            <p class="muted">Grade horária do curso de Licenciatura em Música — disciplinas anuais.</p>
+
+            <div class="schedule-filter" id="scheduleFilter">
+              <button class="schedule-year-btn schedule-year-btn--active" data-year="0" onclick="filterSchedule(0)">Todos</button>
+              <button class="schedule-year-btn" data-year="1" onclick="filterSchedule(1)">1º Ano</button>
+              <button class="schedule-year-btn" data-year="2" onclick="filterSchedule(2)">2º Ano</button>
+              <button class="schedule-year-btn" data-year="3" onclick="filterSchedule(3)">3º Ano</button>
+              <button class="schedule-year-btn" data-year="4" onclick="filterSchedule(4)">4º Ano</button>
+              <button class="schedule-year-btn" data-year="5" onclick="filterSchedule(5)">5º Ano</button>
+            </div>
+
+            <div id="scheduleGrid" class="schedule-grid"></div>
+          </div>
+        </section>
+
+        <!-- Calendar Modal -->
+        <div class="calendarModal" id="calendarModal">
+          <div class="calendarModal-content">
+            <div class="calendarModal-header">
+              <h3 id="calendarModal-title"></h3>
+              <button class="calendarModal-close" onclick="closeCalendarModal()" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="calendarModal-body" id="calendarModal-body"></div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <span class="muted">Licenciatura em Música – UEL • Portal de Documentos e Informações</span>
+          <span class="muted">Publicado via GitHub Pages</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Bottom nav (mobile) -->
+  <nav class="bottomNav" aria-label="Navegação rápida">
+    <a class="bItem" href="#inicio" aria-label="Início">🏠</a>
+    <a class="bItem" href="#calendario" aria-label="Calendário 2026">📅</a>
+    <a class="bItem" href="#horarios" aria-label="Horário 2026">🕒</a>
+    <a class="bItem" href="#documentos" aria-label="Documentos">📄</a>
+    <button class="bItem" id="moreBtn" type="button" aria-label="Mais">⋯</button>
+  </nav>
+
+  <!-- Sheet "Mais" (mobile) -->
+  <div class="moreSheet" id="moreSheet" hidden>
+    <div class="moreSheet__panel" role="dialog" aria-modal="true" aria-label="Mais atalhos">
+      <div class="moreSheet__head">
+        <strong>Mais</strong>
+        <button id="closeMore" type="button" aria-label="Fechar">✕</button>
       </div>
-    </section>
-
-    <section class="calendar-section" id="calendario">
-      <div class="panel">
-        <h2>📅 Calendário Acadêmico 2026</h2>
-        <p class="muted">Navegue pelos meses e clique nos dias destacados para ver os eventos acadêmicos.</p>
-
-        <div class="calendar-controls">
-          <button class="btn btn--ghost calendar-nav-btn" onclick="prevMonth()" aria-label="Mês anterior">◀ Anterior</button>
-          <button class="btn btn--ghost calendar-nav-btn" onclick="goToday()" aria-label="Ir para hoje">📍 Hoje</button>
-          <span class="calendar-month-title" id="calendar-header"></span>
-          <button class="btn btn--ghost calendar-nav-btn" onclick="nextMonth()" aria-label="Próximo mês">Próximo ▶</button>
-        </div>
-
-        <div id="calendar" class="calendar-grid"></div>
-
-        <div class="calendar-legend">
-          <span class="legend-item"><span class="legend-dot cal-letivo"></span> Período Letivo</span>
-          <span class="legend-item"><span class="legend-dot cal-matricula"></span> Matrícula</span>
-          <span class="legend-item"><span class="legend-dot cal-docente"></span> Docente</span>
-          <span class="legend-item"><span class="legend-dot cal-resultado"></span> Resultado</span>
-          <span class="legend-item"><span class="legend-dot cal-exame"></span> Exame</span>
-          <span class="legend-item"><span class="legend-dot cal-evento"></span> Evento</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="schedule-section" id="horarios">
-      <div class="panel">
-        <h2>🎵 Horário de Aulas 2026</h2>
-        <p class="muted">Grade horária do curso de Licenciatura em Música — disciplinas anuais.</p>
-        
-        <div class="schedule-filter" id="scheduleFilter">
-          <button class="schedule-year-btn schedule-year-btn--active" data-year="0" onclick="filterSchedule(0)">Todos</button>
-          <button class="schedule-year-btn" data-year="1" onclick="filterSchedule(1)">1º Ano</button>
-          <button class="schedule-year-btn" data-year="2" onclick="filterSchedule(2)">2º Ano</button>
-          <button class="schedule-year-btn" data-year="3" onclick="filterSchedule(3)">3º Ano</button>
-          <button class="schedule-year-btn" data-year="4" onclick="filterSchedule(4)">4º Ano</button>
-          <button class="schedule-year-btn" data-year="5" onclick="filterSchedule(5)">5º Ano</button>
-        </div>
-        
-        <div id="scheduleGrid" class="schedule-grid"></div>
-      </div>
-    </section>
-
-    <!-- Calendar Modal -->
-    <div class="calendarModal" id="calendarModal">
-      <div class="calendarModal-content">
-        <div class="calendarModal-header">
-          <h3 id="calendarModal-title"></h3>
-          <button class="calendarModal-close" onclick="closeCalendarModal()" aria-label="Fechar">&times;</button>
-        </div>
-        <div class="calendarModal-body" id="calendarModal-body"></div>
+      <div class="moreSheet__grid">
+        <a href="#curso">🎓 Sobre o curso</a>
+        <a href="#contato">📞 Contato</a>
+        <a href="https://graduacao.uel.br/musica/projetos/" target="_blank" rel="noopener">🎵 Projetos</a>
+        <a href="https://sites.uel.br/prograd/estudante/estagios-e-intercambios/" target="_blank" rel="noopener">🧑‍🏫 Estágio</a>
+        <a href="https://graduacao.uel.br/musica/corpo-docente/" target="_blank" rel="noopener">👥 Corpo docente</a>
       </div>
     </div>
-  </main>
+  </div>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <span class="muted">Licenciatura em Música – UEL • Portal de Documentos e Informações</span>
-      <span class="muted">Publicado via GitHub Pages</span>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
-  <script src="calendar.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="calendar.js" defer></script>
 </body>
 </html>
