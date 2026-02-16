@@ -22,6 +22,7 @@
     <div class="mobileNav" id="mobileNav" hidden>
       <a href="#curso">O Curso</a>
       <a href="#documentos">Documentos</a>
+      <a href="#calendario">Calendário</a>
       <a href="https://graduacao.uel.br/musica/projetos/" target="_blank" rel="noopener">Projetos (Pes/En/Ex)</a>
       <a href="https://sites.uel.br/prograd/estudante/estagios-e-intercambios/" target="_blank" rel="noopener">Estágio</a>
       <a href="#documentos">TCC</a>
@@ -214,6 +215,41 @@
         </section>
       </div>
     </section>
+
+    <section class="calendar-section" id="calendario">
+      <div class="panel">
+        <h2>📅 Calendário Acadêmico 2026</h2>
+        <p class="muted">Navegue pelos meses e clique nos dias destacados para ver os eventos acadêmicos.</p>
+
+        <div class="calendar-controls">
+          <button class="btn btn--ghost calendar-nav-btn" onclick="prevMonth()" aria-label="Mês anterior">◀ Anterior</button>
+          <span class="calendar-month-title" id="calendar-header"></span>
+          <button class="btn btn--ghost calendar-nav-btn" onclick="nextMonth()" aria-label="Próximo mês">Próximo ▶</button>
+        </div>
+
+        <div id="calendar" class="calendar-grid"></div>
+
+        <div class="calendar-legend">
+          <span class="legend-item"><span class="legend-dot cal-letivo"></span> Período Letivo</span>
+          <span class="legend-item"><span class="legend-dot cal-matricula"></span> Matrícula</span>
+          <span class="legend-item"><span class="legend-dot cal-docente"></span> Docente</span>
+          <span class="legend-item"><span class="legend-dot cal-resultado"></span> Resultado</span>
+          <span class="legend-item"><span class="legend-dot cal-exame"></span> Exame</span>
+          <span class="legend-item"><span class="legend-dot cal-evento"></span> Evento</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar Modal -->
+    <div class="calendarModal" id="calendarModal">
+      <div class="calendarModal-content">
+        <div class="calendarModal-header">
+          <h3 id="calendarModal-title"></h3>
+          <button class="calendarModal-close" onclick="closeCalendarModal()" aria-label="Fechar">&times;</button>
+        </div>
+        <div class="calendarModal-body" id="calendarModal-body"></div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -224,5 +260,6 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="calendar.js" defer></script>
 </body>
 </html>
